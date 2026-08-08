@@ -1,0 +1,36 @@
+{
+  "name": "banki-shop",
+  "version": "1.0.0",
+  "description": "Интернет-магазин картин эпохи Возрождения",
+  "private": true,
+  "scripts": {
+    "dev": "webpack serve --mode development --open",
+    "build": "webpack --mode production",
+    "start": "webpack serve --mode development"
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "dependencies": {
+    "pinia": "^2.1.7",
+    "swiper": "^5.4.5",
+    "vue": "^2.7.16",
+    "vue-awesome-swiper": "^4.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^16.18.98",
+    "css-loader": "^6.11.0",
+    "html-webpack-plugin": "^5.6.0",
+    "mini-css-extract-plugin": "^2.9.0",
+    "sass": "^1.77.6",
+    "sass-loader": "^13.3.3",
+    "style-loader": "^3.3.4",
+    "ts-loader": "^9.5.1",
+    "typescript": "^4.9.5",
+    "vue-loader": "^15.11.1",
+    "vue-template-compiler": "^2.7.16",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.2"
+  }
+}
