@@ -2,12 +2,11 @@
   <form class="search" @submit.prevent="handleSubmit">
     <input
       id="search"
-      :value="searchQuery"
+      v-model="localQuery"
       type="search"
       class="search__input"
       placeholder="Поиск по названию картины"
       aria-label="Поиск по названию картины"
-      @input="handleInput"
     />
     <button type="submit" class="search__button">Найти</button>
   </form>
@@ -20,19 +19,20 @@ import { useProductsStore } from '@/store/products';
 
 export default Vue.extend({
   name: 'SearchBar',
+  data() {
+    return {
+      localQuery: '',
+    };
+  },
   computed: {
     ...mapStores(useProductsStore),
-    searchQuery(): string {
-      return this.productsStore.searchQuery;
-    },
+  },
+  mounted() {
+    this.localQuery = this.productsStore.searchQuery;
   },
   methods: {
-    handleInput(event: Event): void {
-      const target = event.target as HTMLInputElement;
-      this.productsStore.setSearchQuery(target.value);
-    },
     handleSubmit(): void {
-      this.productsStore.setSearchQuery(this.searchQuery.trim());
+      this.productsStore.setSearchQuery(this.localQuery.trim());
     },
   },
 });
